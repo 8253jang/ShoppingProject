@@ -1,12 +1,20 @@
 package exam.shop.dto;
 
-public class ItemDTO {
+public class Item {
 	private int itemId;
 	private String itemName;
 	private int price;
 	private String description;
 	private String pictureUrl;
 	
+	public Item(int itemId, String itemName, int price, String description, String pictureUrl) {
+		super();
+		this.itemId = itemId;
+		this.itemName = itemName;
+		this.price = price;
+		this.description = description;
+		this.pictureUrl = pictureUrl;
+	}
 	public int getItemId() {
 		return itemId;
 	}

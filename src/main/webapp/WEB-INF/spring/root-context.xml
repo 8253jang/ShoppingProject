@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	
+
+	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- DataSource 설정 -->
+	<!-- 
+		BasicDataSource dataSource = new BasicDataSource() 
+		dataSource.setDriverClassName("gfdSG");
 		
+		driver.
+	-->
+	
+	<bean id="dataSource"
+		  class="org.apache.commons.dbcp.BasicDataSource"
+		  p:driverClassName="oracle.jdbc.driver.OracleDriver"
+		  p:url="jdbc:oracle:thin:@localhost:1521:xe"
+		  p:username="jspuser"
+		  p:password="jsp1234" />
+		  
+	<bean id="jdbcTemplate"
+		  class="org.springframework.jdbc.core.JdbcTemplate"
+		  p:dataSource-ref="dataSource" /> 
+		
+	<bean id="itemDAOImpl" 
+		  class="exam.shop.dao.ItemDAOImpl"
+		  p:jdbcTemplate-ref="jdbcTemplate" />
+	
+	<bean id="itemCatalog" 
+		  class="exam.shop.service.ItemCatalogImpl"
+		  p:itemDAOImpl-ref="itemDAOImpl"/>
+	
+	<bean id="shopService" 
+	 	  class="exam.shop.service.ShopServiceImpl" 
+	 	  p:itemCatalog-ref="itemCatalog"/>
+	 	  
+	<bean id="itemController"
+		  class="exam.shop.controller.ItemController"
+	 	  p:shopService-ref="shopService" />
+	
 </beans>
