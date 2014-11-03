@@ -34,7 +34,7 @@ create table order_detail
 )
 
 select * from items
-
+select * from users
 
 create sequence item_seq
 create sequence order_seq

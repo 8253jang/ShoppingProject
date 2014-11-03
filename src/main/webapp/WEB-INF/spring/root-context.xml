@@ -14,25 +14,48 @@
 		  p:url="jdbc:oracle:thin:@localhost:1521:xe"
 		  p:username="jspuser"
 		  p:password="jsp1234" />
-		  
+	
+	<!-- MessageSource -->
+	<bean id="messageSource" 
+		  class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="messages" />
+	</bean>
+		  		  
 	<bean id="jdbcTemplate"
 		  class="org.springframework.jdbc.core.JdbcTemplate"
 		  p:dataSource-ref="dataSource" /> 
-		
-	<bean id="itemDAOImpl" 
+	
+	<!--  Item -->	
+	<bean id="itemDAO" 
 		  class="exam.shop.dao.ItemDAOImpl"
 		  p:jdbcTemplate-ref="jdbcTemplate" />
-	
+		  
 	<bean id="itemCatalog" 
 		  class="exam.shop.service.ItemCatalogImpl"
-		  p:itemDAOImpl-ref="itemDAOImpl"/>
+		  p:itemDAOImpl-ref="itemDAO"/>
+
+	<!--  User -->
+	<bean id="userDAO" 
+		  class="exam.shop.dao.UserDAOImpl"
+		  p:jdbcTemplate-ref="jdbcTemplate" />
+		  
+  	<bean id="userCatalog" 
+	  class="exam.shop.service.UserCatalogImpl"
+	  	p:userDAOImpl-ref="userDAO"/>
+	
 	
 	<bean id="shopService" 
 	 	  class="exam.shop.service.ShopServiceImpl" 
-	 	  p:itemCatalog-ref="itemCatalog"/>
-	 	  
+	 	  p:itemCatalog-ref="itemCatalog" 
+	 	  p:userCatalog-ref="userCatalog" />
+	
+	<!--  Controller --> 
 	<!-- <bean id="itemController"
 		  class="exam.shop.controller.ItemController"
 	 	  p:shopService-ref="shopService" />
-	 -->
+	
+	<bean id="userController"
+		  class="exam.shop.controller.UserController"
+	 	  p:shopService-ref="shopService" /> -->
+	
 </beans>

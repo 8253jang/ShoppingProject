@@ -7,7 +7,7 @@ import org.springframework.jdbc.core.*;
 
 import exam.shop.dto.*;
 
-public class ItemDAOImpl implements ItemDAO {
+public class  ItemDAOImpl implements ItemDAO {
 	
 	private JdbcTemplate jdbcTemplate;
 

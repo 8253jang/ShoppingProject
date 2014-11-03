@@ -22,9 +22,6 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="exam.shop.controller" />
- 	
-	
-	<!-- <bean id="itemController" class="exam.shop.controller.ItemController" /> -->
 	
 	
 </beans:beans>

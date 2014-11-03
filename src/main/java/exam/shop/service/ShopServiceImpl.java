@@ -12,6 +12,10 @@ public class ShopServiceImpl implements ShopService {
 	public void setItemCatalog(ItemCatalog itemCatalog) {
 		this.itemCatalog = itemCatalog;
 	}
+	
+	public void setUserCatalog(UserCatalog userCatalog) {
+		this.userCatalog = userCatalog;
+	}
 
 	@Override
 	public List<Item> getItemList() {
@@ -38,7 +42,7 @@ public class ShopServiceImpl implements ShopService {
 	@Override
 	public void registerUser(User user) {
 		// TODO Auto-generated method stub
-		
+		userCatalog.registerUser(user);
 	}
 
 }
