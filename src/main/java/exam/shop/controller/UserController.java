@@ -16,9 +16,9 @@ public class UserController {
 	@Autowired
 	private ShopService shopService;
 	
-	public void setShopService(ShopService shopService) {
+	/*public void setShopService(ShopService shopService) {
 		this.shopService = shopService;
-	}
+	}*/
 	
 	// 처음 회원가입 링크시
 	@RequestMapping(value="/registerUser.shop", method=RequestMethod.GET)

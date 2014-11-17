@@ -3,18 +3,22 @@ package exam.shop.dao;
 import java.sql.*;
 import java.util.*;
 
+import org.springframework.beans.factory.annotation.*;
 import org.springframework.jdbc.core.*;
+import org.springframework.stereotype.*;
 
 import exam.shop.dto.*;
 
+@Component
 public class  ItemDAOImpl implements ItemDAO {
 	
+	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	// DataSource 이용해서 DataBase 연결
-	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+	/*public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
-	}
+	}*/
 
 	@Override
 	public List<Item> findAll() {

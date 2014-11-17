@@ -1,23 +1,26 @@
 package exam.shop.dao;
 
-import java.sql.*;
-
-import org.springframework.jdbc.core.*;
+import org.apache.ibatis.session.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
 
 import exam.shop.dto.*;
 
+@Component
 public class UserDAOImpl implements UserDAO {
-	private JdbcTemplate jdbcTemplate;
+	@Autowired
+	//private JdbcTemplate jdbcTemplate;
+	private SqlSession sqlSession;
 
 	// DataSource 이용해서 DataBase 연결
-	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+	/*public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
-	}
+	}*/
 
 	@Override
 	public User getUserByUserId(String userId, String userPwd) {
 		// TODO Auto-generated method stub
-		String sql = "select * from users where user_id=? and user_pwd=?";
+		/*String sql = "select * from users where user_id=? and user_pwd=?";
 		
 		User user = jdbcTemplate.queryForObject(sql, 
 				new Object[] {userId, userPwd}, new RowMapper<User>(){
@@ -35,17 +38,21 @@ public class UserDAOImpl implements UserDAO {
 					}
 		});
 		
-		return user;
+		return user;*/
+		
+		return null;
 	}
 
 	@Override
 	public void registerUser(User user) {
 		// TODO Auto-generated method stub
-		String sql ="insert into users values(?, ?, ?)";
+		/*String sql ="insert into users values(?, ?, ?)";
 		
 		int result = jdbcTemplate.update(sql, 
 				user.getUserId(), 
 				user.getUserPwd(), 
-				user.getUserName());
+				user.getUserName());*/
+		
+		sqlSession.insert("exam.shop.mapper.UserMapper.registerUser", user);
 	}
 }

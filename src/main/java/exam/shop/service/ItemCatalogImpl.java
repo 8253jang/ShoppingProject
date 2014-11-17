@@ -2,16 +2,21 @@ package exam.shop.service;
 
 import java.util.*;
 
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
+
 import exam.shop.dao.*;
 import exam.shop.dto.*;
 
+@Component
 public class ItemCatalogImpl implements ItemCatalog {
 
+	@Autowired
 	private ItemDAOImpl itemDAOImpl;
 	
-	public void setItemDAOImpl(ItemDAOImpl itemDAOImpl) {
+	/*public void setItemDAOImpl(ItemDAOImpl itemDAOImpl) {
 		this.itemDAOImpl = itemDAOImpl;
-	}
+	}*/
 
 	@Override
 	public List<Item> getItemList() {

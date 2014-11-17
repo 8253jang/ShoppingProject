@@ -6,7 +6,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+
+<style>
+	.error {
+		color:#ff0000;
+		font-weight:bold
+	}
+</style>
+
 </head>
+
 <body>
 <h1>Register User</h1>
 
@@ -16,7 +25,7 @@
 			<td>User Id</td>
 			<td>
 				<form:input path="userId" />
-				<form:errors path="userId" />
+				<form:errors path="userId" cssClass="error" />
 			</td>
 		</tr>
 		<tr>
