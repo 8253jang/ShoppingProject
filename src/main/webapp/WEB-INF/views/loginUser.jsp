@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+
+<style>
+	.error {
+		color:#ff0000;
+		font-weight:bold
+	}
+</style>
+
+</head>
+
+<body>
+<h1>Login User</h1>
+
+<form:form commandName="user" action="loginUserProcess.shop" method="post">
+	<table>
+		<tr>
+			<td>User Id</td>
+			<td>
+				<form:input path="userId" />
+				<form:errors path="userId" cssClass="error" />
+			</td>
+		</tr>
+		<tr>
+			<td>User Pwd</td>
+			<td>
+				<form:input path="userPwd" />
+				<form:errors path="userPwd" />
+			</td>
+		</tr>
+	
+		<tr>
+			<td colspan="2">
+				<button type="submit">Login</button>
+			</td>
+		</tr>
+	</table>
+</form:form>
+
+</body>
+</html>

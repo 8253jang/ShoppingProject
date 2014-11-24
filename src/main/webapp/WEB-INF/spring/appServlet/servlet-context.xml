@@ -25,6 +25,7 @@
 	<context:component-scan base-package="exam.shop.dao" />
 	<context:component-scan base-package="exam.shop.dto" />
 	<context:component-scan base-package="exam.shop.service" />
+	<context:component-scan base-package="exam.shop.security" />
 	
 	
 </beans:beans>

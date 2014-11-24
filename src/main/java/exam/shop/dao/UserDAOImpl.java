@@ -55,4 +55,13 @@ public class UserDAOImpl implements UserDAO {
 		
 		sqlSession.insert("exam.shop.mapper.UserMapper.registerUser", user);
 	}
+
+	@Override
+	public String getPassword(String userId) {
+		// TODO Auto-generated method stub
+		
+		User user = (User) sqlSession.selectOne("exam.shop.mapper.UserMapper.getPassword", userId);
+		
+		return user.getUserPwd();
+	}
 }

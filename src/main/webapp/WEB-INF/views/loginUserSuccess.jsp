@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="listItem.shop">ListItem</a><br/>
-	<a href="registerUser.shop">Register User</a><br/>
-	<a href="loginUser.shop">Login User</a>
+Wow
 </body>
 </html>
