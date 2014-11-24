@@ -33,6 +33,14 @@ create table order_detail
 	foreign key(item_id) references items(item_id)
 )
 
+create table authorities
+(
+	user_id		varchar2(10),
+	authority 	varchar2(10)
+)
+
+insert into authorities values('a', 'ROLE_USER')
+
 select * from items
 select * from users
 
@@ -41,5 +49,6 @@ create sequence order_seq
 
 insert into items values(item_seq.nextval, 'a', 100, '', '')
 
+select user_id as username, user_pwd as password from users where user_id='a'
 
 

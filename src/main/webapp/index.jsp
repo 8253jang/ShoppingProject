@@ -9,5 +9,6 @@
 <body>
 	<a href="listItem.shop">ListItem</a><br/>
 	<a href="registerUser.shop">Register User</a>
+	<a href="loginUser.shop">Login User</a>
 </body>
 </html>
