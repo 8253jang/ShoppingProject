@@ -9,7 +9,7 @@ import org.springframework.web.servlet.*;
 
 import exam.shop.dto.*;
 import exam.shop.service.*;
-
+//////////////////////////////////ã…“ã…“ã…“ã…“ã…“ã…“ã…“ã…“ã…“
 /**
  * Handles requests for the application home page.
  */
@@ -22,7 +22,7 @@ public class ItemController {
 		this.shopService = shopService;
 	}
 	
-	// »óÇ° ÀüÃ¼ ¸ñ·Ï
+	// ìƒí’ˆ ì „ì²´ ëª©ë¡
 	@RequestMapping(value="/listItem.shop")
 	public ModelAndView listItem() {
 		ModelAndView mav = new ModelAndView();
@@ -33,7 +33,7 @@ public class ItemController {
 		return mav;
 	}
 	
-	// »óÇ° »ó¼¼ ÆäÀÌÁö
+	// ìƒí’ˆ ìƒì„¸ í˜ì´ì§€
 	@RequestMapping(value="/detailItem.shop")
 	public ModelAndView detailItem(int itemId) {
 		ModelAndView mav = new ModelAndView();
